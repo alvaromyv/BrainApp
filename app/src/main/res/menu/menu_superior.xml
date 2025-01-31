@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainActivity"
+        android:icon="@drawable/ic_game"
+        android:title="Jugar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/valoracionActivity"
+        android:icon="@drawable/ic_rate"
+        android:title="Valorar" />
+    <item
+        android:id="@+id/configuracionActivity"
+        android:icon="@drawable/ic_options"
+        android:title="Configuración" />
+</menu>

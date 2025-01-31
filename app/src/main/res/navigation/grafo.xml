@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grafo"
+    app:startDestination="@id/inicioFragment">
+
+    <!-- InicioFragment-->
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.amv.iestr.brainapp.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio">
+        <action
+            android:id="@+id/action_inicioFragment_to_sumaFragment"
+            app:destination="@id/sumaFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_inicioFragment_to_opcionesFragment"
+            app:destination="@id/opcionesFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <!-- OpcionesFragment-->
+    <fragment
+        android:id="@+id/opcionesFragment"
+        android:name="com.amv.iestr.brainapp.OpcionesFragment"
+        android:label="fragment_opciones"
+        tools:layout="@layout/fragment_opciones" >
+        <action
+            android:id="@+id/action_opcionesFragment_to_finFragment"
+            app:destination="@id/finFragment"
+            app:popUpTo="@id/inicioFragment"/>
+        <action
+            android:id="@+id/action_opcionesFragment_self"
+            app:destination="@id/opcionesFragment"
+            app:popUpTo="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_opcionesFragment_to_sumaFragment"
+            app:destination="@id/sumaFragment"
+            app:popUpTo="@id/inicioFragment" />
+        <argument
+            android:name="puntos"
+            app:argType="integer" />
+    </fragment>
+    <!-- SumaFragment-->
+    <fragment
+        android:id="@+id/sumaFragment"
+        android:name="com.amv.iestr.brainapp.SumaFragment"
+        android:label="fragment_suma"
+        tools:layout="@layout/fragment_suma" >
+        <action
+            android:id="@+id/action_sumaFragment_to_finFragment"
+            app:destination="@id/finFragment"
+            app:popUpTo="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_sumaFragment_self"
+            app:destination="@id/sumaFragment"
+            app:popUpTo="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_sumaFragment_to_opcionesFragment"
+            app:destination="@id/opcionesFragment"
+            app:popUpTo="@id/inicioFragment" />
+        <argument
+            android:name="puntos"
+            app:argType="integer" />
+    </fragment>
+    <!-- FinFragment-->
+    <fragment
+        android:id="@+id/finFragment"
+        android:name="com.amv.iestr.brainapp.FinFragment"
+        android:label="fragment_fin"
+        tools:layout="@layout/fragment_fin" >
+        <argument
+            android:name="puntos"
+            app:argType="integer" />
+    </fragment>
+    <activity
+        android:id="@+id/configuracionActivity"
+        android:name="com.amv.iestr.brainapp.ConfiguracionActivity"
+        android:label="activity_configuracion"
+        tools:layout="@layout/activity_configuracion" />
+    <activity
+        android:id="@+id/valoracionActivity"
+        android:name="com.amv.iestr.brainapp.ValoracionActivity"
+        android:label="activity_valoracion"
+        tools:layout="@layout/activity_valoracion" />
+</navigation>

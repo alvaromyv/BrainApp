@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grafo_2"
+    app:startDestination="@id/resultadoFragment">
+
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.amv.iestr.brainapp.ResultadoFragment"
+        android:label="fragment_resultado"
+        tools:layout="@layout/fragment_resultado" >
+        <action
+            android:id="@+id/action_resultadoFragment_to_valoracionFragment"
+            app:destination="@id/valoracionFragment" />
+        <argument
+            android:name="resultado"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/valoracionFragment"
+        android:name="com.amv.iestr.brainapp.ValoracionFragment"
+        android:label="fragment_valoracion"
+        tools:layout="@layout/fragment_valoracion" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.amv.iestr.brainapp.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/configuracionActivity"
+        android:name="com.amv.iestr.brainapp.ConfiguracionActivity"
+        android:label="activity_configuracion"
+        tools:layout="@layout/activity_configuracion" />
+</navigation>
